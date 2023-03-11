@@ -12,6 +12,10 @@
           class="form-control"
           formControlName="email"
         />
+        <app-valation-messages
+          *ngIf="isValidField('email')"
+          [errors]="form.get('email')?.errors"
+        ></app-valation-messages>
       </div>
       <div class="mb-3">
         <label for="password">Contraseña</label>
@@ -21,6 +25,10 @@
           class="form-control"
           formControlName="password"
         />
+        <app-valation-messages
+          *ngIf="isValidField('password')"
+          [errors]="form.get('password')?.errors"
+        ></app-valation-messages>
       </div>
       <div class="d-grid gap-2">
         <button

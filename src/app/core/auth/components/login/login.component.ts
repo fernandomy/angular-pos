@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  AbstractControl,
+  FormBuilder,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -7,6 +12,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
+  sent: boolean = false;
   form: FormGroup;
 
   constructor(private fb: FormBuilder) {
@@ -18,6 +24,14 @@ export class LoginComponent {
   }
 
   onSubmit() {
-    console.log(this.form.value);
+    this.sent = true;
+    if (this.form.valid) {
+      console.log('el formulario es valido');
+    }
+  }
+
+  isValidField(name: string): boolean {
+    const field = this.form.get(name);
+    return !!((field?.touched && field.invalid) || this.sent);
   }
 }
