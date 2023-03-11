@@ -1,0 +1,16 @@
+.layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.card {
+  padding: 1rem;
+  width: 450px;
+  max-width: 500px;
+}
+
+.card-title {
+  text-align: center;
+  margin-bottom: 1rem;
+}
