@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {
   Auth,
+  authState,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
@@ -23,5 +24,9 @@ export class AuthService {
 
   logout() {
     return signOut(this.auth);
+  }
+
+  currentUser() {
+    return authState(this.auth);
   }
 }

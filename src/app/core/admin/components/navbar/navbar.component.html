@@ -1,29 +1,33 @@
-<nav class="navbar navbar-light bg-primary sticky-top">
+<nav class="navbar navbar-dark bg-primary sticky-top">
   <div class="container-fluid">
-    <!-- Button Sidebar open -->
-
-    <!-- <a class="btn-sidebar fs-4" (click)="onOpenSidebar()">
-      <span class="navbar-toggler-icon"></span>
-    </a> -->
-    <!-- Greeting user -->
     <div class="navbar-title"><span>Home</span></div>
-    <!-- Nav Menu -->
+    <!-- Nav -->
     <ul class="nav">
-      <!-- Profile -->
+      <!-- Account -->
       <li class="nav-item" display="dynamic" placement="bottom-end" ngbDropdown>
         <a class="nav-link" id="navbarDropdown" ngbDropdownToggle>
-          <img class="profile-photo" src="assets/images/profile.jpg" alt="Imagen de perfil" />
+          <img
+            class="profile-photo"
+            src="assets/images/profile.jpg"
+            alt="Imagen de perfil"
+          />
         </a>
-        <!-- Opciones de la cuenta -->
-        <div class="text-center" aria-labelledby="navbarDropdown" ngbDropdownMenu>
-          <a ngbDropdownItem>Cuenta <span class="account">(admin@pos.com)</span></a>
-      <li>
-        <hr class="dropdown-divider">
+        <!-- Options account -->
+        <div
+          class="text-center"
+          aria-labelledby="navbarDropdown"
+          ngbDropdownMenu
+        >
+          <a ngbDropdownItem
+            >Cuenta <span class="account">({{ account }})</span></a
+          >
+          <li>
+            <hr class="dropdown-divider" />
+          </li>
+          <a ngbDropdownItem>Configuración</a>
+          <a ngbDropdownItem (click)="logout()">Cerrar sesión</a>
+        </div>
       </li>
-      <a ngbDropdownItem>Configuración</a>
-      <a ngbDropdownItem>Cerrar sesión</a>
-  </div>
-  </li>
-  </ul>
+    </ul>
   </div>
 </nav>

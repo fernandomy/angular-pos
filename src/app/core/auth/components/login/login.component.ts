@@ -33,7 +33,7 @@ export class LoginComponent {
         .login(this.form.value)
         .then((user) => {
           console.log(user);
-          // this.router.navigate(['admin']);
+          this.router.navigate(['dashboard']);
         })
         .catch((error) => {
           console.log(error);
