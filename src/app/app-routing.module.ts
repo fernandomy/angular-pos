@@ -8,6 +8,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./core/auth/auth.module').then((m) => m.AuthModule),
   },
+  {
+    path: 'dashboard',
+    loadChildren: () =>
+      import('./core/admin/admin.module').then((m) => m.AdminModule),
+  },
 ];
 
 @NgModule({

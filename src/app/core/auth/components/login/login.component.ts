@@ -32,6 +32,7 @@ export class LoginComponent {
       this.authS
         .login(this.form.value)
         .then((user) => {
+          console.log(user);
           // this.router.navigate(['admin']);
         })
         .catch((error) => {
