@@ -5,9 +5,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AuthRoutingModule } from './auth-routing.module';
 import { LoginComponent } from './components/login/login.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [LoginComponent, ResetPasswordComponent],
   imports: [CommonModule, AuthRoutingModule, SharedModule, ReactiveFormsModule],
 })
 export class AuthModule {}

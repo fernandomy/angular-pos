@@ -3,6 +3,7 @@ import {
   Auth,
   authState,
   createUserWithEmailAndPassword,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signOut,
 } from '@angular/fire/auth';
@@ -24,6 +25,10 @@ export class AuthService {
 
   logout() {
     return signOut(this.auth);
+  }
+
+  resetPassword(email: string) {
+    return sendPasswordResetEmail(this.auth, email);
   }
 
   currentUser() {

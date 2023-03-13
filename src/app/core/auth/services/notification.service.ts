@@ -23,4 +23,8 @@ export class NotificationService {
         return 'Error desconocido';
     }
   }
+
+  success(message: string) {
+    this.toastr.success(message, 'Ok');
+  }
 }

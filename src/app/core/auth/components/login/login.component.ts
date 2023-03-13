@@ -46,4 +46,8 @@ export class LoginComponent {
     const field = this.form.get(name);
     return !!((field?.touched && field.invalid) || this.sent);
   }
+
+  toResetPassword() {
+    this.router.navigate(['/reset-password']);
+  }
 }

@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 export class NotFoundComponent {
   constructor(private router: Router) {}
 
-  goToHome() {
+  toHome() {
     this.router.navigate(['/dashboard']);
   }
 }
