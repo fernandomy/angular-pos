@@ -2,10 +2,10 @@ import { Component, Input } from '@angular/core';
 import { ValidationErrors } from '@angular/forms';
 
 @Component({
-  selector: 'app-valation-messages',
-  templateUrl: './valation-messages.component.html',
+  selector: 'app-validation-messages',
+  templateUrl: './validation-messages.component.html',
   styles: [],
 })
-export class ValationMessagesComponent {
+export class ValidationMessagesComponent {
   @Input() errors!: ValidationErrors[string];
 }

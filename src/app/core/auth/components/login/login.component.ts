@@ -10,7 +10,6 @@ import { NotificationService } from '../../services/notification.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  sent: boolean = false;
   form: FormGroup;
 
   constructor(
@@ -21,22 +20,21 @@ export class LoginComponent {
   ) {
     // Inicializado el formulario y validaciones con formbuilder
     this.form = this.fb.group({
-      email: ['admin@angularpos.com', [Validators.required, Validators.email]],
-      password: ['123456', [Validators.required, Validators.minLength(6)]],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
 
   onSubmit() {
-    this.sent = true;
     if (this.form.valid) {
       this.authS
         .login(this.form.value)
         .then((user) => {
-          console.log(user);
+          // console.log(user);
           this.router.navigate(['dashboard']);
         })
         .catch((error) => {
-          console.log(error);
+          // console.log(error);
           this.notificationS.firebaseError(error.code);
         });
     }
@@ -44,7 +42,7 @@ export class LoginComponent {
 
   isValidField(name: string): boolean {
     const field = this.form.get(name);
-    return !!((field?.touched && field.invalid) || this.sent);
+    return !!(field?.touched && field.invalid);
   }
 
   toResetPassword() {

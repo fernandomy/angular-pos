@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ValationMessagesComponent } from './components/valation-messages/valation-messages.component';
+import { ValidationMessagesComponent } from './components/validation-messages/validation-messages.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
-  declarations: [ValationMessagesComponent, NotFoundComponent],
+  declarations: [ValidationMessagesComponent, NotFoundComponent],
   imports: [CommonModule],
-  exports: [ValationMessagesComponent],
+  exports: [ValidationMessagesComponent],
 })
 export class SharedModule {}

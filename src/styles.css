@@ -2,3 +2,31 @@
 a {
   cursor: pointer;
 }
+.offcanvas {
+  background-color: #222222;
+  width: 250px !important;
+  z-index: 10;
+}
+
+/* Accordion */
+.accordion {
+  border: none;
+}
+.accordion-item {
+  border: none;
+}
+.accordion-button {
+  border-radius: 0 !important;
+  background-color: #222222;
+}
+.accordion-button:focus {
+  box-shadow: none;
+}
+.accordion-body {
+  padding: 0;
+}
+
+/* List group */
+.list-group {
+  border-radius: 0;
+}

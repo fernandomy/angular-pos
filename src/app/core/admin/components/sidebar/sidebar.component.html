@@ -1,0 +1,48 @@
+<div class="offcanvas-header">
+  <h4 class="offcanvas-title">AngularPOS</h4>
+  <button type="button" class="btn-close" (click)="close()"></button>
+</div>
+<div class="brand">
+  <img
+    class="brand-img"
+    src="assets/images/profile.jpg"
+    alt="Imagen de perfil"
+  />
+  <div class="email-account"></div>
+</div>
+<ngb-accordion [closeOthers]="true" activeIds="ngb-panel">
+  <ngb-panel>
+    <ng-template ngbPanelTitle
+      ><i class="bi bi-box me-3"></i>Productos</ng-template
+    >
+    <ng-template ngbPanelContent class="panel-content">
+      <div class="list-group">
+        <a class="list-group-item list-group-item-action" routerLink="/product"
+          >Lista de artículos</a
+        >
+        <a class="list-group-item list-group-item-action" routerLink="/category"
+          >Categorias</a
+        >
+        <a class="list-group-item list-group-item-action">Descuentos</a>
+      </div>
+    </ng-template>
+  </ngb-panel>
+  <ngb-panel>
+    <ng-template ngbPanelTitle
+      ><i class="bi bi-book me-3"></i>Inventario</ng-template
+    >
+    <ng-template ngbPanelContent class="panel-content">
+      <ul class="list-group">
+        <a class="list-group-item list-group-item-action" routerLink="/"
+          >Órdenes de compra</a
+        >
+        <a class="list-group-item list-group-item-action" routerLink="/"
+          >Proveedores</a
+        >
+        <a class="list-group-item list-group-item-action"
+          >Historial de inventario</a
+        >
+      </ul>
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>
