@@ -1,9 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --bg-sidebar: #282828;
+}
 a {
   cursor: pointer;
 }
 .offcanvas {
-  background-color: #222222;
+  background-color: var(--bg-sidebar);
   width: 250px !important;
   z-index: 10;
 }
@@ -17,9 +20,10 @@ a {
 }
 .accordion-button {
   border-radius: 0 !important;
-  background-color: #222222;
+  background-color: var(--bg-sidebar);
 }
 .accordion-button:focus {
+  background-color: var(--bg-sidebar);
   box-shadow: none;
 }
 .accordion-body {
@@ -29,4 +33,7 @@ a {
 /* List group */
 .list-group {
   border-radius: 0;
+}
+.list-group-item {
+  background-color: #2c2c2c;
 }

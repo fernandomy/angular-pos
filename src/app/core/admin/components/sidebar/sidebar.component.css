@@ -8,3 +8,7 @@
   width: 100px;
   height: 100px;
 }
+hr {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
