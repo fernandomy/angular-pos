@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from 'src/app/core/auth/services/auth.service';
 import { SidebarService } from '../../services/sidebar.service';
 
@@ -9,13 +10,13 @@ import { SidebarService } from '../../services/sidebar.service';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
-  show = false;
   account!: string;
 
   constructor(
     private router: Router,
     private authS: AuthService,
-    private sidebarS: SidebarService
+    private sidebarS: SidebarService,
+    private offcanvas: NgbOffcanvas
   ) {}
 
   ngOnInit(): void {
@@ -31,11 +32,14 @@ export class NavbarComponent implements OnInit {
 
   logout() {
     this.authS.logout();
-    this.router.navigate(['/login']);
+    this.router.navigate(['login']);
   }
 
-  showSidebar(show: boolean) {
-    this.show = show;
-    this.show ? this.sidebarS.open() : this.sidebarS.close();
+  showSidebar() {
+    if (this.offcanvas.hasOpenOffcanvas()) {
+      this.sidebarS.close();
+    } else {
+      this.sidebarS.open();
+    }
   }
 }

@@ -26,6 +26,7 @@
           class="form-control"
           formControlName="password"
           placeholder="Ingrea tu contraseña"
+          (keydown.enter)="onSubmit()"
         />
         <app-validation-messages
           *ngIf="isValidField('password')"

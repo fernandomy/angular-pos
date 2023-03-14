@@ -6,11 +6,17 @@ import { SidebarComponent } from '../components/sidebar/sidebar.component';
   providedIn: 'root',
 })
 export class SidebarService {
-  constructor(private offcanvas: NgbOffcanvas, config: NgbOffcanvasConfig) {
+  constructor(
+    private offcanvas: NgbOffcanvas,
+
+    config: NgbOffcanvasConfig
+  ) {
     config.scroll = true;
-    config.backdrop = false;
+    config.backdrop = true;
     config.keyboard = true;
     config.panelClass = 'offcanvas';
+    config.container = '#mycontainer';
+    config.backdropClass = 'backdrop';
   }
   open() {
     this.offcanvas.open(SidebarComponent);
