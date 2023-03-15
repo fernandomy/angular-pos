@@ -20,8 +20,8 @@ export class LoginComponent {
   ) {
     // Inicializado el formulario y validaciones con formbuilder
     this.form = this.fb.group({
-      email: ['admin@easypos.com', [Validators.required, Validators.email]],
-      password: ['123456', [Validators.required, Validators.minLength(6)]],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
 

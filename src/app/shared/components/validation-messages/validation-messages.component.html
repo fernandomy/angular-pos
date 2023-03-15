@@ -1,14 +1,20 @@
-<div class="text-danger" *ngIf="errors">
-  <div *ngIf="errors.required"><small>* Este campo es requerido.</small></div>
-  <div *ngIf="errors.email">Ingrese un correo valido.</div>
-  <div *ngIf="errors.minlength">
-    <small
-      >* Este campo debe tener un mínimo de
-      {{ errors.minlength.requiredLength }} caracteres.</small
-    >
+<div class="text-danger" *ngIf="isValidField()">
+  <div *ngIf="field.errors.required">
+    <small>Este campo es requerido.</small>
   </div>
-  <div *ngIf="errors.maxlength">
-    Este campo debe tener un máximo de
-    {{ errors.maxlength.requiredLength }} caracteres.
+  <div *ngIf="field.errors.email">
+    <small>Ingrese un correo valido.</small>
+  </div>
+  <div *ngIf="field.errors.minlength">
+    <small>
+      * Este campo debe tener un mínimo de
+      {{ field.errors.minlength.requiredLength }} caracteres.
+    </small>
+  </div>
+  <div *ngIf="field.errors.maxlength">
+    <small>
+      Este campo debe tener un máximo de
+      {{ field.errors.maxlength.requiredLength }} caracteres.
+    </small>
   </div>
 </div>

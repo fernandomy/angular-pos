@@ -3,3 +3,7 @@
   direction: row;
   align-items: end;
 }
+
+.card {
+  padding: 1rem;
+}

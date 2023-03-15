@@ -13,10 +13,7 @@
           formControlName="email"
           placeholder="Ingresa tu correo"
         />
-        <app-validation-messages
-          *ngIf="isValidField('email')"
-          [errors]="form.get('email')?.errors"
-        ></app-validation-messages>
+        <app-validation-messages [field]="form.get('email')"/>
       </div>
       <div class="mb-3">
         <label for="password">Contraseña</label>
@@ -28,10 +25,7 @@
           placeholder="Ingrea tu contraseña"
           (keydown.enter)="onSubmit()"
         />
-        <app-validation-messages
-          *ngIf="isValidField('password')"
-          [errors]="form.get('password')?.errors"
-        ></app-validation-messages>
+        <app-validation-messages [field]="form.get('password')"/>
       </div>
       <div class="sent">
         <button

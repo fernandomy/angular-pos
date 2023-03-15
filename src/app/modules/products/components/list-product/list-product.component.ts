@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProductI } from '../../models/product.interface';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-list-product',
   templateUrl: './list-product.component.html',
   styleUrls: ['./list-product.component.css'],
 })
-export class ListProductComponent {
+export class ListProductComponent implements OnInit {
   products: ProductI[] = [
     {
       id: 1,
@@ -21,6 +22,13 @@ export class ListProductComponent {
       state: 'En venta',
     },
   ];
+
+  constructor(private productS: ProductService) {}
+  ngOnInit(): void {
+    this.productS.getProducts().subscribe((res) => {
+      console.log(res);
+    });
+  }
 
   onSearch() {}
 }
