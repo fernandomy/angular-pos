@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ConfirmService } from 'src/app/shared/services/confirm.service';
+import { NotificationService } from 'src/app/shared/services/notification.service';
 import { ProductI } from '../../models/product.interface';
 import { ProductService } from '../../services/product.service';
 
@@ -8,27 +10,34 @@ import { ProductService } from '../../services/product.service';
   styleUrls: ['./list-product.component.css'],
 })
 export class ListProductComponent implements OnInit {
-  products: ProductI[] = [
-    {
-      id: 1,
-      name: 'Leche chocolatada 50gr',
-      category: 'Lacteos',
-      price: 2.0,
-      cost: 1.5,
-      stock: 10,
-      stock_min: 5,
-      barcode: '54654654654',
-      description: '',
-      state: 'En venta',
-    },
-  ];
+  products!: ProductI[];
 
-  constructor(private productS: ProductService) {}
+  constructor(
+    private productService: ProductService,
+    private notificationS: NotificationService,
+    private confirmService: ConfirmService
+  ) {}
+
   ngOnInit(): void {
-    this.productS.getProducts().subscribe((res) => {
-      console.log(res);
+    this.productService.getProducts().subscribe((res) => {
+      this.products = res;
     });
   }
 
-  onSearch() {}
+  async delete(product: ProductI) {
+    const result = await this.confirmService.open(
+      'Eliminar producto',
+      '¿Esta seguro de realizar esta acción?'
+    );
+    console.log(result);
+
+    if (result) {
+      this.productService
+        .deleteProduct(product)
+        .then((res) => {
+          this.notificationS.success('Producto eliminado');
+        })
+        .catch();
+    }
+  }
 }

@@ -1,0 +1,17 @@
+<div class="card col-12 col-md-6">
+  <form [formGroup]="form">
+    <div class="mb-3">
+      <label for="name">Nombre</label>
+      <input type="text" class="form-control" id="name" formControlName="name" placeholder="Ejemplo: Lacteos" />
+      <app-validation-messages [field]="form.get('name')" />
+    </div>
+    <div class="mb-3">
+      <button class="btn btn-success mx-1" (click)="onSubmit()" [disabled]="form.invalid">
+        Aceptar
+      </button>
+      <button class="btn btn-danger mx-1" routerLink="/dashboard/categories">
+        Cancelar
+      </button>
+    </div>
+  </form>
+</div>

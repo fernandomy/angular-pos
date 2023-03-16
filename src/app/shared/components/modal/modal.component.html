@@ -1,0 +1,13 @@
+<div class="modal-header">
+  <h4>{{ title }}</h4>
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+    (click)="dismiss()"
+  ></button>
+</div>
+
+<div class="modal-body">
+  <ng-content></ng-content>
+</div>

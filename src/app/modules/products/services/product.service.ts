@@ -28,8 +28,8 @@ export class ProductService {
     >;
   }
 
-  deleteProduct(id: string) {
-    const productDocRef = doc(this.firestore, `products/${id}`);
+  deleteProduct(product: ProductI) {
+    const productDocRef = doc(this.firestore, `products/${product.id}`);
     return deleteDoc(productDocRef);
   }
 }
