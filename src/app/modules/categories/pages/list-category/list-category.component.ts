@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { ConfirmService } from 'src/app/shared/services/confirm.service';
-import { ModalService } from 'src/app/shared/services/modal.service';
-import { NotificationService } from 'src/app/shared/services/notification.service';
 import { CategoryI } from '../../models/cateogory.interface';
 import { CategoryService } from '../../services/category.service';
-import { AddCategoryComponent } from '../add-category/add-category.component';
 
 @Component({
   selector: 'app-list-category',
@@ -18,8 +16,8 @@ export class ListCategoryComponent implements OnInit {
   constructor(
     private categoryService: CategoryService,
     private confirmService: ConfirmService,
-    private notificationService: NotificationService,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -31,15 +29,14 @@ export class ListCategoryComponent implements OnInit {
   async delete(category: CategoryI) {
     const result = await this.confirmService.open(
       'Eliminar categoría',
-      '¿Esta seguro de realizar esta acción?'
+      'Esta acción es irreversible. ¿Esta seguro?'
     );
-    console.log(result);
 
     if (result) {
       this.categoryService
         .deleteCategory(category)
         .then((res) => {
-          this.notificationService.success('Categoría eliminada');
+          this.toastr.success('Categoria eliminada correctamente.');
         })
         .catch();
     }
@@ -53,9 +50,9 @@ export class ListCategoryComponent implements OnInit {
     const data = { state: !category.state };
     this.categoryService.updateCategory(category.id, data).then(() => {
       if (!data.state) {
-        this.notificationService.info('Categoria deshabilitada');
+        this.toastr.info('Categoria desactivada');
       } else {
-        this.notificationService.success('Categoria habilitada');
+        this.toastr.success('Categoria disponible');
       }
     });
   }

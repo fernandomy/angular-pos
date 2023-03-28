@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { ModalService } from 'src/app/shared/services/modal.service';
-import { NotificationService } from 'src/app/shared/services/notification.service';
+import { ToastrService } from 'ngx-toastr';
 import { CategoryService } from '../../services/category.service';
 
 @Component({
@@ -16,7 +14,7 @@ export class AddCategoryComponent {
   constructor(
     private fb: FormBuilder,
     private categoryService: CategoryService,
-    private notificationService: NotificationService
+    private toastr: ToastrService
   ) {
     this.form = this.initForm();
   }
@@ -32,7 +30,7 @@ export class AddCategoryComponent {
     this.categoryService
       .addCategory(this.form.value)
       .then((resp) => {
-        this.notificationService.success('Categoria creada correctamente.');
+        this.toastr.success('Categoria creada correctamente.');
       })
       .catch();
   }

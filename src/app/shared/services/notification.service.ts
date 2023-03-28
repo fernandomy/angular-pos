@@ -23,17 +23,4 @@ export class NotificationService {
         return 'Error desconocido';
     }
   }
-
-  success(message: string) {
-    this.toastr.success(message, 'Ok');
-  }
-  error(message: string) {
-    this.toastr.error(message, 'Error');
-  }
-  info(message: string) {
-    this.toastr.info(message, 'Info');
-  }
-  warning(message: string) {
-    this.toastr.warning(message, 'Advertencia');
-  }
 }

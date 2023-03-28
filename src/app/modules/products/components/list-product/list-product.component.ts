@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { ConfirmService } from 'src/app/shared/services/confirm.service';
-import { NotificationService } from 'src/app/shared/services/notification.service';
 import { ProductI } from '../../models/product.interface';
 import { ProductService } from '../../services/product.service';
 
@@ -14,8 +14,8 @@ export class ListProductComponent implements OnInit {
 
   constructor(
     private productService: ProductService,
-    private notificationS: NotificationService,
-    private confirmService: ConfirmService
+    private confirmService: ConfirmService,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -35,7 +35,7 @@ export class ListProductComponent implements OnInit {
       this.productService
         .deleteProduct(product)
         .then((res) => {
-          this.notificationS.success('Producto eliminado');
+          this.toastr.success('Producto eliminado correctamente.');
         })
         .catch();
     }

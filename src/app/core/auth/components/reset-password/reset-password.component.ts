@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { NotificationService } from '../../../../shared/services/notification.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-reset-password',
@@ -15,7 +16,8 @@ export class ResetPasswordComponent implements OnInit {
     private router: Router,
     private fb: FormBuilder,
     private authS: AuthService,
-    private notificationS: NotificationService
+    private notificationS: NotificationService,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -30,7 +32,7 @@ export class ResetPasswordComponent implements OnInit {
       .resetPassword(email)
       .then((res) => {
         console.log();
-        this.notificationS.success('Se envio un link a su correo.');
+        this.toastr.success('Se envio un link a su correo.');
         this.router.navigate(['/login']);
       })
       .catch((error) => {
