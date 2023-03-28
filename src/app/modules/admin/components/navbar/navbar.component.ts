@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
-import { AuthService } from 'src/app/core/auth/services/auth.service';
+import { AuthService } from 'src/app/modules/auth/services/auth.service';
 import { SidebarService } from '../../services/sidebar.service';
 
 @Component({
