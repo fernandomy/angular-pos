@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { ConfirmService } from 'src/app/shared/services/confirm.service';
-import { ProductI } from '../../models/product.interface';
-import { ProductService } from '../../services/product.service';
+import { ProductModel } from '../../../../core/models/product.model';
+import { ProductService } from '../../../../core/services/product.service';
 
 @Component({
   selector: 'app-list-product',
@@ -10,7 +10,7 @@ import { ProductService } from '../../services/product.service';
   styleUrls: ['./list-product.component.css'],
 })
 export class ListProductComponent implements OnInit {
-  products!: ProductI[];
+  products!: ProductModel[];
 
   constructor(
     private productService: ProductService,
@@ -24,7 +24,7 @@ export class ListProductComponent implements OnInit {
     });
   }
 
-  async delete(product: ProductI) {
+  async delete(product: ProductModel) {
     const result = await this.confirmService.open(
       'Eliminar producto',
       '¿Esta seguro de realizar esta acción?'

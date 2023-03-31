@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ProductService } from '../../services/product.service';
+import { ProductService } from '../../../../core/services/product.service';
 
 @Component({
   selector: 'app-add-product',
@@ -16,9 +16,13 @@ export class AddProductComponent {
     private fb: FormBuilder,
     private productS: ProductService
   ) {
+    const randomNum = Math.floor(Math.random() * (50 - 1 + 1)) + 1;
+    const imageDir = `https://robohash.org/${randomNum}`;
     this.form = this.fb.group({
       name: [, [Validators.required]],
       category: [, [Validators.required]],
+      price: [, [Validators.required]],
+      imageUrl: [imageDir, [Validators.required]],
     });
   }
 

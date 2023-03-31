@@ -1,0 +1,28 @@
+.card {
+    display: flex;
+    flex-direction: row;
+}
+
+.card-hover:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.5s ease;
+}
+
+.card-body {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+}
+
+.card-body img {
+    border-radius: 10px;
+    height: 70px;
+    /* border: 1px solid black; */
+}
+
+.card-title {
+    text-transform: capitalize;
+    font-weight: bold;
+}

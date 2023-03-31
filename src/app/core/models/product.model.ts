@@ -1,4 +1,4 @@
-export interface ProductI {
+export interface ProductModel {
   id: string;
   name: string;
   category: string;
@@ -8,5 +8,6 @@ export interface ProductI {
   stock_min: number;
   barcode: string;
   description: string;
+  imageUrl: string;
   state: string;
 }

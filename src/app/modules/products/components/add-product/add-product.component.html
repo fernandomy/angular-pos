@@ -2,6 +2,7 @@
   <div class="col-12 col-md-6">
     <div class="card">
       <form [formGroup]="form">
+
         <div class=" mb-3">
           <label for="name">Nombre</label>
           <input type="text" class="form-control" id="name" formControlName="name" placeholder="Ejemplo: Manzana" />
@@ -18,6 +19,18 @@
           <app-validation-messages [field]="form.get('category')" />
         </div>
 
+        <div class=" mb-3">
+          <label for="price">Precio</label>
+          <input type="number" class="form-control" id="price" formControlName="price" placeholder="S/. 0.00" />
+          <app-validation-messages [field]="form.get('price')" />
+        </div>
+
+        <div class=" mb-3">
+          <label for="imagen">Imagen</label>
+          <input type="text" class="form-control" id="imagen" formControlName="imageUrl" placeholder="www.image.com" />
+          <app-validation-messages [field]="form.get('imagen')" />
+        </div>
+
         <div class="">
           <button class="btn btn-success mx-1" (click)="onSubmit()" [disabled]="form.invalid">
             Aceptar
@@ -30,11 +43,11 @@
     </div>
   </div>
 
-  <div class="col-12 col-md-6">
+  <!-- <div class="col-12 col-md-6">
     <div class="card">
       <button class="btn btn-sm btn-primary w-50 mx-auto">
         <span><i class="bi bi-plus"></i>Agregar variante</span>
       </button>
     </div>
-  </div>
+  </div> -->
 </div>

@@ -8,7 +8,7 @@ import {
 } from '@angular/fire/firestore';
 import { deleteDoc } from '@firebase/firestore';
 import { Observable } from 'rxjs';
-import { ProductI } from '../models/product.interface';
+import { ProductModel } from '../models/product.model';
 
 @Injectable({
   providedIn: 'root',
@@ -16,19 +16,19 @@ import { ProductI } from '../models/product.interface';
 export class ProductService {
   constructor(private firestore: Firestore) {}
 
-  addProduct(product: ProductI) {
+  addProduct(product: ProductModel) {
     const productRef = collection(this.firestore, 'products');
     return addDoc(productRef, product);
   }
 
-  getProducts(): Observable<ProductI[]> {
+  getProducts(): Observable<ProductModel[]> {
     const productRef = collection(this.firestore, 'products');
     return collectionData(productRef, { idField: 'id' }) as Observable<
-      ProductI[]
+      ProductModel[]
     >;
   }
 
-  deleteProduct(product: ProductI) {
+  deleteProduct(product: ProductModel) {
     const productDocRef = doc(this.firestore, `products/${product.id}`);
     return deleteDoc(productDocRef);
   }

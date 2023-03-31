@@ -1,0 +1,20 @@
+<div class="card">
+    <img src="{{ item.imageUrl }}" alt="" class="image" />
+
+    <div class="detail">
+        <span class="title">{{ item.name }}</span>
+        <div class="content">
+            <span>{{ item.price | currency : "S/." }}</span>
+            <span class="text-decoration-underline">
+                <a [ngClass]="{ 'disabled-link': item.quantity < 2 }" (click)="decreaseAmount(item)"><i
+                        class="bi bi-dash-circle"></i></a>
+                <span class="mx-2">{{ item.quantity }}</span>
+                <a (click)="increaseAmount(item)"><i class="bi bi-plus-circle"></i></a>
+            </span>
+            <span class="fw-bold">{{
+                item.price * item.quantity | currency : "S/."
+                }}</span>
+        </div>
+    </div>
+    <a class="text-danger" (click)="removeItem(item)"><i class="bi bi-x-circle"></i></a>
+</div>

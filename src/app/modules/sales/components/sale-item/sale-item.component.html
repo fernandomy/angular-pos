@@ -1,0 +1,9 @@
+<div class="card card-hover mb-3" (click)="addProductCart(item)">
+    <div class="card-body p-0">
+        <img src="{{ item.imageUrl }}" alt="" />
+        <div class="ms-3">
+            <p class="card-title">{{ item.name }}</p>
+            <p class="card-text">{{ item.price | currency : "S/." }}</p>
+        </div>
+    </div>
+</div>

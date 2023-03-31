@@ -8,6 +8,16 @@
 <hr />
 <ngb-accordion [closeOthers]="true" activeIds="ngb-panel">
   <ngb-panel>
+    <ng-template ngbPanelTitle><i class="bi bi-book me-3"></i>Ventas</ng-template>
+    <ng-template ngbPanelContent class="panel-content">
+      <ul class="list-group">
+        <a class="list-group-item list-group-item-action" routerLink="/dashboard/sales">Nueva venta</a>
+        <a class="list-group-item list-group-item-action" routerLink="/">Historial de ventas</a>
+      </ul>
+    </ng-template>
+  </ngb-panel>
+
+  <ngb-panel>
     <ng-template ngbPanelTitle><i class="bi bi-box me-3"></i>Productos</ng-template>
     <ng-template ngbPanelContent class="panel-content">
       <div class="list-group">
@@ -17,6 +27,7 @@
       </div>
     </ng-template>
   </ngb-panel>
+
   <ngb-panel>
     <ng-template ngbPanelTitle><i class="bi bi-book me-3"></i>Inventario</ng-template>
     <ng-template ngbPanelContent class="panel-content">

@@ -22,6 +22,11 @@ const routes: Routes = [
             (m) => m.CategoriesModule
           ),
       },
+      {
+        path: 'sales',
+        loadChildren: () =>
+          import('../../modules/sales/sales.module').then((m) => m.SalesModule),
+      },
     ],
   },
 ];
