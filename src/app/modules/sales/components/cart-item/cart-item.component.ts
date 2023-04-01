@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { CarItemModel } from 'src/app/core/models/cart-item.model';
+import { SaleItemModel } from 'src/app/core/models/sale-item.model';
 import {
   decreaseCartitemQuantity,
   increaseCartitemQuantity,
@@ -13,18 +13,18 @@ import {
   styleUrls: ['./cart-item.component.css'],
 })
 export class CartItemComponent {
-  @Input() item!: CarItemModel;
+  @Input() item!: SaleItemModel;
 
   constructor(private store: Store) {}
 
-  removeItem(item: CarItemModel) {
+  removeItem(item: SaleItemModel) {
     this.store.dispatch(removeCartItem({ item }));
   }
 
-  increaseAmount(item: CarItemModel) {
+  increaseAmount(item: SaleItemModel) {
     this.store.dispatch(increaseCartitemQuantity({ item }));
   }
-  decreaseAmount(item: CarItemModel) {
+  decreaseAmount(item: SaleItemModel) {
     this.store.dispatch(decreaseCartitemQuantity({ item }));
   }
 }

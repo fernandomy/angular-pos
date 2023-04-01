@@ -17,6 +17,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { ROOT_REDUCERS } from './store/app.state';
 import { ProductsEffects } from './store/effects/product.effects';
+import { SaleEffects } from './store/effects/sale.effects';
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,7 +33,7 @@ import { ProductsEffects } from './store/effects/product.effects';
 
     StoreModule.forRoot(ROOT_REDUCERS),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
-    EffectsModule.forRoot([ProductsEffects]),
+    EffectsModule.forRoot([ProductsEffects, SaleEffects]),
   ],
   providers: [],
   bootstrap: [AppComponent],

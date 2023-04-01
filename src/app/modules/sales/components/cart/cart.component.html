@@ -12,8 +12,8 @@
     </div>
     <div class="card-footer text-center">
         <div class="mb-2">Total: <span class="fw-bold">{{ total | currency : "S/." }}</span> </div>
-        <button [disabled]="!(emptyCart>0)" class="btn btn-success w-50">
-            Confirmar pago
+        <button class="btn btn-success w-50" [disabled]="!(emptyCart>0)" (click)="onSaveSale()">
+            Confirmar venta
         </button>
     </div>
 </div>
