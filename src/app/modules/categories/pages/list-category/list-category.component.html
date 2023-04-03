@@ -14,18 +14,10 @@
       <tr *ngFor="let category of categories">
         <td>{{ category.name }}</td>
         <td>
-          <a class="text-warning small mx-1" (click)="goEditCategory(category)"
-            ><i class="bi bi-pencil"></i
-          ></a>
-          <a
-            class="text-primary small mx-1"
-            [ngClass]="{ 'text-secondary': !category.state }"
-            (click)="disabledCategory(category)"
-            ><i class="bi bi-eye"></i
-          ></a>
-          <a class="text-danger small mx-1" (click)="delete(category)"
-            ><i class="bi bi-trash"></i
-          ></a>
+          <a class="text-warning small mx-1" (click)="goEditCategory(category)"><i class="bi bi-pencil"></i></a>
+          <!-- <a class="text-primary small mx-1" [ngClass]="{ 'text-secondary': !category.state }"
+            (click)="disabledCategory(category)"><i class="bi bi-eye"></i></a> -->
+          <a class="text-danger small mx-1" (click)="delete(category)"><i class="bi bi-trash"></i></a>
         </td>
       </tr>
     </tbody>

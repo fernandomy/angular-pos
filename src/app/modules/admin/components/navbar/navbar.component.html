@@ -11,28 +11,18 @@
       <!-- Account -->
       <li class="nav-item" display="dynamic" placement="bottom-end" ngbDropdown>
         <a class="nav-link" id="navbarDropdown" ngbDropdownToggle>
-          <img
-            class="profile-photo"
-            src="assets/images/profile.jpg"
-            alt="Imagen de perfil"
-          />
+          <img class="profile-photo" src="assets/images/profile.jpg" alt="Imagen de perfil" />
         </a>
         <!-- Options account -->
-        <div
-          class="text-center"
-          aria-labelledby="navbarDropdown"
-          ngbDropdownMenu
-        >
-          <a ngbDropdownItem
-            >Cuenta <span class="account">({{ account }})</span></a
-          >
-          <li>
-            <hr class="dropdown-divider" />
-          </li>
-          <a ngbDropdownItem>Configuración</a>
-          <a ngbDropdownItem (click)="logout()">Cerrar sesión</a>
-        </div>
+        <div class="text-center" aria-labelledby="navbarDropdown" ngbDropdownMenu>
+          <a ngbDropdownItem>Cuenta <span class="account">({{ account }})</span></a>
+      <li>
+        <hr class="dropdown-divider" />
       </li>
-    </ul>
+      <a ngbDropdownItem>Configuración</a>
+      <a ngbDropdownItem (click)="logout()">Cerrar sesión</a>
+  </div>
+  </li>
+  </ul>
   </div>
 </nav>

@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-12 col-lg-6">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Fecha</th>
+                        <th>Total</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let sale of sales$|async">
+                        <td>{{sale.id}}</td>
+                        <td>{{sale.date | date}}</td>
+                        <td>{{sale.total | currency: 'S/.'}}</td>
+                        <td>
+                            <a class="text-info mx-1" (click)="onLoadSaleItems(sale)"><i
+                                    class="bi bi-card-list"></i></a>
+                            <a class="text-danger mx-1" (click)="onDeleteSale(sale)"><i class="bi bi-trash"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal, NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 
 @Injectable({
   providedIn: 'root',
@@ -7,7 +7,7 @@ import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 export class ModalService {
   private modalRef!: NgbModalRef;
 
-  constructor(private modal: NgbModal) {}
+  constructor(private modal: NgbModal) { }
 
   open(component: any) {
     this.modalRef = this.modal.open(component, {
@@ -18,10 +18,12 @@ export class ModalService {
   }
 
   dismiss() {
+    // Confirm
     this.modalRef.dismiss();
   }
 
   close() {
+    // Cancel
     this.modalRef.close();
   }
 }

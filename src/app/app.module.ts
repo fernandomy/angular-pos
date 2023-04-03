@@ -19,12 +19,14 @@ import { ROOT_REDUCERS } from './store/app.state';
 import { ProductsEffects } from './store/effects/product.effects';
 import { SaleEffects } from './store/effects/sale.effects';
 
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+
     ToastrModule.forRoot({ timeOut: 2500 }),
 
     provideFirebaseApp(() => initializeApp(environment.firebase)),
@@ -38,4 +40,4 @@ import { SaleEffects } from './store/effects/sale.effects';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

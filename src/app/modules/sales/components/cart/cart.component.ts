@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Store } from '@ngrx/store';
+import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
-import { CarItemModel } from 'src/app/core/models/cart-item.model';
 import { SaleItemModel } from 'src/app/core/models/sale-item.model';
 import { SaleModel } from 'src/app/core/models/sale.model';
+import { emptyCart } from 'src/app/store/actions/cart.actions';
 import { saveSale } from 'src/app/store/actions/sale.actions';
 import { selectCartItems } from 'src/app/store/selectors/cart.selectors';
 
@@ -18,7 +20,7 @@ export class CartComponent {
   total: number = 0;
   items!: SaleItemModel[];
 
-  constructor(private store: Store) {
+  constructor(private store: Store, private toastr: ToastrService, public activeModal: NgbActiveModal) {
     this.itemsCart$ = store.select(selectCartItems);
 
     this.itemsCart$.subscribe((data) => {
@@ -38,5 +40,11 @@ export class CartComponent {
       // items: this.items,
     };
     this.store.dispatch(saveSale({ sale: newSale, items: this.items }));
+    this.store.dispatch(emptyCart());
+    this.toastr.success('Venta realizada correctamente');
+  }
+
+  closeCartModal() {
+    // this.modalActive.dismiss()
   }
 }

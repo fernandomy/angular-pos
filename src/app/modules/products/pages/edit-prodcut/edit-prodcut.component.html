@@ -1,0 +1,49 @@
+<h3>Editar Producto</h3>
+<div class="row">
+    <div class="col-12 col-md-6">
+        <div class="card">
+            <form [formGroup]="form">
+
+                <div class=" mb-3">
+                    <label for="name">Nombre</label>
+                    <input type="text" class="form-control" id="name" formControlName="name"
+                        placeholder="Ejemplo: Manzana" />
+                    <app-validation-messages [field]="form.get('name')" />
+                </div>
+
+                <div class=" mb-3">
+                    <label for="category">Categoría</label>
+                    <select class="form-select" id="category" aria-label="Select category" formControlName="category">
+                        <option [defaultSelected]="true" value="Sin categoria">Sin categoria</option>
+                        <option *ngFor="let categorie of categories" value="{{categorie.name}}">{{categorie.name}}
+                        </option>
+                    </select>
+                    <app-validation-messages [field]="form.get('category')" />
+                </div>
+
+                <div class=" mb-3">
+                    <label for="price">Precio</label>
+                    <input type="number" class="form-control" id="price" formControlName="price"
+                        placeholder="S/. 0.00" />
+                    <app-validation-messages [field]="form.get('price')" />
+                </div>
+
+                <div class=" mb-3">
+                    <label for="imagen">Imagen</label>
+                    <input type="text" class="form-control" id="imagen" formControlName="imageUrl"
+                        placeholder="www.image.com" />
+                    <app-validation-messages [field]="form.get('imagen')" />
+                </div>
+
+                <div class="">
+                    <button type="submit" class="btn btn-success mx-1" (click)="onSubmit()" [disabled]="form.invalid">
+                        Aceptar
+                    </button>
+                    <button class="btn btn-danger mx-1" (click)="toProducts()">
+                        Cancelar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

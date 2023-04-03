@@ -12,9 +12,8 @@
         <div class=" mb-3">
           <label for="category">Categoría</label>
           <select class="form-select" id="category" aria-label="Select category" formControlName="category">
-            <option selected>Sin categoria</option>
-            <option value="Lacteos">Lacteos</option>
-            <option value="Utensilios">Utensilios</option>
+            <option [defaultSelected]="true" value="Sin categoria">Sin categoria</option>
+            <option *ngFor="let categorie of categories" value="{{categorie.name}}">{{categorie.name}}</option>
           </select>
           <app-validation-messages [field]="form.get('category')" />
         </div>

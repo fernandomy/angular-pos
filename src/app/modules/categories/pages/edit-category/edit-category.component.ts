@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { NotificationService } from 'src/app/shared/services/notification.service';
 import { CategoryI } from '../../models/cateogory.interface';
-import { CategoryService } from '../../services/category.service';
+import { CategoryService } from '../../../../core/services/category.service';
 
 @Component({
   selector: 'app-edit-category',
@@ -18,7 +18,6 @@ export class EditCategoryComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private categoryService: CategoryService,
-    private notificationService: NotificationService,
     private route: ActivatedRoute,
     private router: Router
   ) {

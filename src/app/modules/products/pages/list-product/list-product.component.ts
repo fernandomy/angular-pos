@@ -3,6 +3,7 @@ import { ToastrService } from 'ngx-toastr';
 import { ConfirmService } from 'src/app/shared/services/confirm.service';
 import { ProductModel } from '../../../../core/models/product.model';
 import { ProductService } from '../../../../core/services/product.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-product',
@@ -15,8 +16,9 @@ export class ListProductComponent implements OnInit {
   constructor(
     private productService: ProductService,
     private confirmService: ConfirmService,
-    private toastr: ToastrService
-  ) {}
+    private toastr: ToastrService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.productService.getProducts().subscribe((res) => {
@@ -29,7 +31,6 @@ export class ListProductComponent implements OnInit {
       'Eliminar producto',
       '¿Esta seguro de realizar esta acción?'
     );
-    console.log(result);
 
     if (result) {
       this.productService
@@ -39,5 +40,9 @@ export class ListProductComponent implements OnInit {
         })
         .catch();
     }
+  }
+
+  goEditProduct(product: ProductModel) {
+    this.router.navigate(['/dashboard/products/edit', product.id]);
   }
 }

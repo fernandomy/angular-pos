@@ -3,6 +3,7 @@ import { CartStateModel } from 'src/app/core/models/cart-state.model';
 import {
   addCartItem,
   decreaseCartitemQuantity,
+  emptyCart,
   increaseCartitemQuantity,
   removeCartItem,
 } from '../actions/cart.actions';
@@ -53,5 +54,9 @@ export const CartReducer = createReducer(
         ? { ...cartItem, quantity: cartItem.quantity - 1 }
         : cartItem
     ),
-  }))
+  })),
+
+  on(emptyCart, (state) => {
+    return { ...state, cartItems: [] };
+  })
 );

@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ConfirmService } from 'src/app/shared/services/confirm.service';
 import { CategoryI } from '../../models/cateogory.interface';
-import { CategoryService } from '../../services/category.service';
+import { CategoryService } from '../../../../core/services/category.service';
 
 @Component({
   selector: 'app-list-category',
@@ -18,7 +18,7 @@ export class ListCategoryComponent implements OnInit {
     private confirmService: ConfirmService,
     private router: Router,
     private toastr: ToastrService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.categoryService.getCategories().subscribe((res) => {

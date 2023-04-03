@@ -1,7 +1,11 @@
+<div class="modal-header d-md-none">
+    <h4>Carrito</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss()"></button>
+</div>
 <div class="card p-0">
-    <div class="card-header text-center">
+    <!-- <div class="card-header text-center">
         <h4>Carrito</h4>
-    </div>
+    </div> -->
     <div class="card-body">
         <ng-container *ngIf="emptyCart > 0">
             <app-cart-item *ngFor="let item of itemsCart$ | async" [item]="item"></app-cart-item>

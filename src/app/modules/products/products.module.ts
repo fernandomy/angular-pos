@@ -3,12 +3,13 @@ import { CommonModule } from '@angular/common';
 import { ProductsRoutingModule } from './products-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { ListProductComponent } from './components/list-product/list-product.component';
-import { AddProductComponent } from './components/add-product/add-product.component';
+import { ListProductComponent } from './pages/list-product/list-product.component';
+import { AddProductComponent } from './pages/add-product/add-product.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { EditProdcutComponent } from './pages/edit-prodcut/edit-prodcut.component';
 
 @NgModule({
-  declarations: [ListProductComponent, AddProductComponent],
+  declarations: [ListProductComponent, AddProductComponent, EditProdcutComponent],
   imports: [
     CommonModule,
     ProductsRoutingModule,
@@ -16,4 +17,4 @@ import { SharedModule } from 'src/app/shared/shared.module';
     ReactiveFormsModule,
   ],
 })
-export class ProductsModule {}
+export class ProductsModule { }

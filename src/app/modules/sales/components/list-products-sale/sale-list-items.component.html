@@ -10,14 +10,16 @@
     </div>
 </div>
 
-<div class="row mt-3">
-    <ng-container *ngIf="items$ | async as items">
-        <ng-container *ngFor="
-            let item of items
-              | filterItemByName : filterName
-              | filterItemByPrice : filterPriceMin : filterPriceMax
-          ">
-            <app-sale-item class="col-lg-6" [item]="item"></app-sale-item>
+<div class="card card-items mt-2">
+    <div class="row">
+        <ng-container *ngIf="items$ | async as items">
+            <ng-container *ngFor="
+                let item of items
+                  | filterItemByName : filterName
+                  | filterItemByPrice : filterPriceMin : filterPriceMax
+              ">
+                <app-sale-item class="col-lg-6" [item]="item"></app-sale-item>
+            </ng-container>
         </ng-container>
-    </ng-container>
+    </div>
 </div>
