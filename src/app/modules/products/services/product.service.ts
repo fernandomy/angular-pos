@@ -10,7 +10,7 @@ import {
 } from '@angular/fire/firestore';
 import { deleteDoc } from '@firebase/firestore';
 import { Observable } from 'rxjs';
-import { ProductModel } from '../models/product.model';
+import { ProductModel } from '../../../core/models/product.model';
 
 @Injectable({
   providedIn: 'root',

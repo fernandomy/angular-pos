@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { ConfirmService } from 'src/app/shared/services/confirm.service';
 import { ProductModel } from '../../../../core/models/product.model';
-import { ProductService } from '../../../../core/services/product.service';
+import { ProductService } from '../../services/product.service';
 import { Router } from '@angular/router';
 
 @Component({

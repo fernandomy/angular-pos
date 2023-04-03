@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { EMPTY } from 'rxjs';
 import { map, exhaustMap, catchError, take } from 'rxjs/operators';
-import { SaleService } from 'src/app/core/services/sale.service';
+import { SaleService } from 'src/app/modules/sales/services/sale.service';
 import {
   deletedSale,
   deleteSale,
@@ -81,5 +81,5 @@ export class SaleEffects {
     )
   );
 
-  constructor(private actions$: Actions, private saleService: SaleService) {}
+  constructor(private actions$: Actions, private saleService: SaleService) { }
 }

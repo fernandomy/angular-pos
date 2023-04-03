@@ -10,8 +10,8 @@ import {
   query,
 } from '@angular/fire/firestore';
 import { map, Observable, of, tap } from 'rxjs';
-import { SaleItemModel } from '../models/sale-item.model';
-import { SaleModel } from '../models/sale.model';
+import { SaleItemModel } from '../../../core/models/sale-item.model';
+import { SaleModel } from '../../../core/models/sale.model';
 
 @Injectable({
   providedIn: 'root',

@@ -10,7 +10,7 @@ import {
   updateDoc,
 } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-import { CategoryI } from '../../modules/categories/models/cateogory.interface';
+import { CategoryI } from '../models/cateogory.interface';
 
 @Injectable({
   providedIn: 'root',

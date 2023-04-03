@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { EMPTY } from 'rxjs';
 import { map, exhaustMap, catchError } from 'rxjs/operators';
-import { ProductService } from 'src/app/core/services/product.service';
+import { ProductService } from 'src/app/modules/products/services/product.service';
 
 @Injectable()
 export class ProductsEffects {
@@ -24,5 +24,5 @@ export class ProductsEffects {
   constructor(
     private actions$: Actions,
     private productService: ProductService
-  ) {}
+  ) { }
 }

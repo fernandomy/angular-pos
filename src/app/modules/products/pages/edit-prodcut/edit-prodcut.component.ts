@@ -3,8 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ProductModel } from 'src/app/core/models/product.model';
-import { CategoryService } from 'src/app/core/services/category.service';
-import { ProductService } from 'src/app/core/services/product.service';
+import { CategoryService } from 'src/app/modules/categories/services/category.service';
+import { ProductService } from 'src/app/modules/products/services/product.service';
 import { CategoryI } from 'src/app/modules/categories/models/cateogory.interface';
 
 @Component({

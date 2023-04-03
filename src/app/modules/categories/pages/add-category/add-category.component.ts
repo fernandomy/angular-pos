@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
-import { CategoryService } from '../../../../core/services/category.service';
+import { CategoryService } from '../../services/category.service';
 
 @Component({
   selector: 'app-add-category',

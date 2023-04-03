@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ProductService } from '../../../../core/services/product.service';
-import { CategoryService } from 'src/app/core/services/category.service';
+import { ProductService } from '../../services/product.service';
+import { CategoryService } from 'src/app/modules/categories/services/category.service';
 import { CategoryI } from 'src/app/modules/categories/models/cateogory.interface';
 import { ToastrService } from 'ngx-toastr';
 
