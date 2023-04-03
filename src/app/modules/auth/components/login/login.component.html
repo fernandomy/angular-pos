@@ -6,39 +6,30 @@
       </div>
       <div class="mb-3">
         <label for="email">Usuario</label>
-        <input
-          type="email"
-          id="email"
-          class="form-control"
-          formControlName="email"
-          placeholder="Ingresa tu correo"
-        />
-        <app-validation-messages [field]="form.get('email')"/>
+        <input type="email" id="email" class="form-control" formControlName="email" placeholder="Ingresa tu correo" />
+        <app-validation-messages [field]="form.get('email')" />
       </div>
       <div class="mb-3">
         <label for="password">Contraseña</label>
-        <input
-          type="password"
-          id="password"
-          class="form-control"
-          formControlName="password"
-          placeholder="Ingrea tu contraseña"
-          (keydown.enter)="onSubmit()"
-        />
-        <app-validation-messages [field]="form.get('password')"/>
+        <input type="password" id="password" class="form-control" formControlName="password"
+          placeholder="Ingrea tu contraseña" (keydown.enter)="onSubmit()" />
+        <app-validation-messages [field]="form.get('password')" />
       </div>
       <div class="sent">
-        <button
-          type="button"
-          class="btn btn-lg btn-primary"
-          (click)="onSubmit()"
-          [disabled]="form.invalid"
-        >
+        <button type="button" class="btn btn-lg btn-primary" (click)="onSubmit()" [disabled]="form.invalid">
           Iniciar
         </button>
       </div>
       <div class="link">
         <a (click)="toResetPassword()">¿Olvido su contraseña?</a>
+
+        <a class=" ms-3" placement="top" ngbTooltip="Click para cargar credenciales de usuario test@easypos.com"
+          (click)="credentialsTest()">
+          <i class="bi bi-person-vcard"></i></a>
+      </div>
+      <!-- User test -->
+      <div>
+
       </div>
     </form>
   </div>

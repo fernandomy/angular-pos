@@ -48,4 +48,11 @@ export class LoginComponent {
   toResetPassword() {
     this.router.navigate(['/reset-password']);
   }
+
+  credentialsTest() {
+    this.form = this.fb.group({
+      email: ['test@easypos.com', [Validators.required, Validators.email]],
+      password: ['123456', [Validators.required, Validators.minLength(6)]],
+    });
+  }
 }
