@@ -16,7 +16,7 @@ export const ProductReducer = createReducer(
   })),
 
   on(loadedProducts, (state, action) => {
-    console.log(action.products);
+    // console.log(action.products);
     return {
       ...state,
       loading: false,

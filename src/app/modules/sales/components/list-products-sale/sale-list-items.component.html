@@ -4,8 +4,8 @@
       <input class="form-control" type="text" [(ngModel)]="filterName" placeholder="Nombre de producto">
     </div>
     <div class="col-12 col-md-6 d-flex mb-2">
-      <input class="form-control" type="number" [(ngModel)]="filterPriceMin" placeholder="Precio min">
-      <input class="form-control ms-3" type="number" [(ngModel)]="filterPriceMax" placeholder="Precio max">
+      <input class="form-control" type="number" min="1" [(ngModel)]="filterPriceMin" placeholder="Precio min">
+      <input class="form-control ms-3" type="number" min="1" [(ngModel)]="filterPriceMax" placeholder="Precio max">
     </div>
   </div>
 </div>

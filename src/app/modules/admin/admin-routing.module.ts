@@ -3,11 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const routes: Routes = [
-  // { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   {
     path: '',
     component: DashboardComponent,
     children: [
+      { path: '', pathMatch: 'full', redirectTo: 'sales' },
       {
         path: 'products',
         loadChildren: () =>
@@ -35,4 +35,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class AdminRoutingModule {}
+export class AdminRoutingModule { }

@@ -1,4 +1,4 @@
 .card-body {
-  height: calc(100vh - 270px);
+  height: calc(100vh - 300px);
   overflow: auto;
 }
