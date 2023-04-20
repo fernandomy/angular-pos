@@ -1,9 +1,12 @@
-import { NgModule, isDevMode } from '@angular/core';
+import { NgModule, isDevMode, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import LocaleEs from '@angular/common/locales/es'
+import { registerLocaleData } from '@angular/common';
+registerLocaleData(LocaleEs, 'es')
 
 // Firebase
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
@@ -18,6 +21,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { ROOT_REDUCERS } from './store/app.state';
 import { ProductsEffects } from './store/effects/product.effects';
 import { SaleEffects } from './store/effects/sale.effects';
+
 
 
 @NgModule({
@@ -37,7 +41,7 @@ import { SaleEffects } from './store/effects/sale.effects';
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
     EffectsModule.forRoot([ProductsEffects, SaleEffects]),
   ],
-  providers: [],
+  providers: [{ provide: LOCALE_ID, useValue: 'es' }],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

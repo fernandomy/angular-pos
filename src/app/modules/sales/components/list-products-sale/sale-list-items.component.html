@@ -1,25 +1,25 @@
 <div class="card filters-input">
-    <div class="row">
-        <div class="col-12 col-md-6 mb-2">
-            <input class="form-control" type="text" [(ngModel)]="filterName" placeholder="Nombre de producto">
-        </div>
-        <div class="col-12 col-md-6 d-flex mb-2">
-            <input class="form-control" type="number" [(ngModel)]="filterPriceMin" placeholder="Precio min">
-            <input class="form-control ms-3" type="number" [(ngModel)]="filterPriceMax" placeholder="Precio max">
-        </div>
+  <div class="row">
+    <div class="col-12 col-md-6 mb-2">
+      <input class="form-control" type="text" [(ngModel)]="filterName" placeholder="Nombre de producto">
     </div>
+    <div class="col-12 col-md-6 d-flex mb-2">
+      <input class="form-control" type="number" [(ngModel)]="filterPriceMin" placeholder="Precio min">
+      <input class="form-control ms-3" type="number" [(ngModel)]="filterPriceMax" placeholder="Precio max">
+    </div>
+  </div>
 </div>
 
-<div class="card card-items mt-2">
-    <div class="row">
-        <ng-container *ngIf="items$ | async as items">
-            <ng-container *ngFor="
+<div class="card card-items mt-2 list-items">
+  <div class="row">
+    <ng-container *ngIf="items$ | async as items">
+      <ng-container *ngFor="
                 let item of items
                   | filterItemByName : filterName
                   | filterItemByPrice : filterPriceMin : filterPriceMax
               ">
-                <app-sale-item class="col-lg-6" [item]="item"></app-sale-item>
-            </ng-container>
-        </ng-container>
-    </div>
+        <app-sale-item class="col-lg-6" [item]="item"></app-sale-item>
+      </ng-container>
+    </ng-container>
+  </div>
 </div>

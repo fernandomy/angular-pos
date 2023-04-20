@@ -3,6 +3,7 @@
   direction: row;
   gap: 1rem;
   margin-bottom: 1rem;
+  justify-content: space-between;
 }
 .btn-add {
   width: 150px;

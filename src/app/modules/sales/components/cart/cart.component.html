@@ -1,23 +1,23 @@
 <div class="modal-header d-md-none">
-    <h4>Carrito</h4>
-    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss()"></button>
+  <h4>Carrito</h4>
+  <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss()"></button>
 </div>
 <div class="card p-0">
-    <!-- <div class="card-header text-center">
+  <!-- <div class="card-header text-center">
         <h4>Carrito</h4>
     </div> -->
-    <div class="card-body">
-        <ng-container *ngIf="emptyCart > 0">
-            <app-cart-item *ngFor="let item of itemsCart$ | async" [item]="item"></app-cart-item>
-        </ng-container>
-        <ng-container *ngIf="emptyCart == 0">
-            <p class="text-center fs-5">El carrito esta vacio.</p>
-        </ng-container>
-    </div>
-    <div class="card-footer text-center">
-        <div class="mb-2">Total: <span class="fw-bold">{{ total | currency : "S/." }}</span> </div>
-        <button class="btn btn-success w-50" [disabled]="!(emptyCart>0)" (click)="onSaveSale()">
-            Confirmar venta
-        </button>
-    </div>
+  <div class="card-body">
+    <ng-container *ngIf="emptyCart > 0">
+      <app-cart-item *ngFor="let item of itemsCart$ | async" [item]="item"></app-cart-item>
+    </ng-container>
+    <ng-container *ngIf="emptyCart == 0">
+      <p class="text-center fs-5">El carrito esta vacio.</p>
+    </ng-container>
+  </div>
+  <div class="card-footer text-center">
+    <div class="mb-2">Total: <span class="fw-bold">{{ total | currency : "S/." }}</span> </div>
+    <button class="btn btn-primary w-50" [disabled]="!(emptyCart>0)" (click)="onSaveSale()">
+      Confirmar venta
+    </button>
+  </div>
 </div>

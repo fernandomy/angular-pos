@@ -7,12 +7,12 @@
 }
 .account {
   display: block;
-  color: #6c757d;
+  /* color: #6c757d; */
   font-size: smaller;
 }
 
 .profile-photo {
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  /* height: 30px; */
 }

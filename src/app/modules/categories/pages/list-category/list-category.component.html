@@ -1,5 +1,6 @@
-<div class="mb-3">
-  <button class="btn btn-success" routerLink="add">Agregar categoria</button>
+<div class="col-12  col-md-6 mb-3 header">
+  <h3>Categorías</h3>
+  <button class="btn btn-success" routerLink="add">Nueva categoría</button>
 </div>
 
 <div class="table-responsive col-md-6">
@@ -14,10 +15,12 @@
       <tr *ngFor="let category of categories">
         <td>{{ category.name }}</td>
         <td>
-          <a class="text-warning small mx-1" (click)="goEditCategory(category)"><i class="bi bi-pencil"></i></a>
+          <a title="Editar" class="text-info mx-2 fs-6" (click)="goEditCategory(category)"><i
+              class="bi bi-pencil-fill"></i></a>
           <!-- <a class="text-primary small mx-1" [ngClass]="{ 'text-secondary': !category.state }"
             (click)="disabledCategory(category)"><i class="bi bi-eye"></i></a> -->
-          <a class="text-danger small mx-1" (click)="delete(category)"><i class="bi bi-trash"></i></a>
+          <a title="Eliminar" class="text-danger mx-2 fs-6" (click)="delete(category)"><i
+              class="bi bi-trash-fill"></i></a>
         </td>
       </tr>
     </tbody>

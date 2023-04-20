@@ -1,22 +1,22 @@
 <app-modal title="Detalle de venta">
-    <ng-container *ngIf="!(loading$ |async)">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Cantidad</th>
-                    <th>Precio</th>
-                    <th>Monto</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let item of saleItems$ | async">
-                    <td>{{item.name}}</td>
-                    <td class="text-center">{{item.quantity}}</td>
-                    <td>{{item.price | currency: 'S/.'}}</td>
-                    <td>{{(item.quantity*item.price) | currency:'S/.'}}</td>
-                </tr>
-            </tbody>
-        </table>
-    </ng-container>
+  <ng-container *ngIf="!(loading$ |async)">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Cantidad</th>
+          <th>Precio</th>
+          <th>Monto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of saleItems$ | async">
+          <td>{{item.name}}</td>
+          <td class="text-center">{{item.quantity}}</td>
+          <td>{{item.price | currency: 'S/.'}}</td>
+          <td>{{(item.quantity*item.price) | currency:'S/.'}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </ng-container>
 </app-modal>

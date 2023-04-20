@@ -15,17 +15,20 @@
           placeholder="Ingrea tu contraseña" (keydown.enter)="onSubmit()" />
         <app-validation-messages [field]="form.get('password')" />
       </div>
-      <div class="sent">
+      <div class="sent mb-3">
         <button type="button" class="btn btn-lg btn-primary" (click)="onSubmit()" [disabled]="form.invalid">
           Iniciar
         </button>
       </div>
-      <div class="link">
+      <div class="link text-center">
         <a (click)="toResetPassword()">¿Olvido su contraseña?</a>
 
-        <a class=" ms-3" placement="top" ngbTooltip="Click para cargar credenciales de usuario test@easypos.com"
-          (click)="credentialsTest()">
-          <i class="bi bi-person-vcard"></i></a>
+        <div>
+          <a class="small text-decoration-none" placement="top"
+            ngbTooltip="Click para cargar credenciales de usuario test@easypos.com" (click)="credentialsTest()">
+            <i class="bi bi-person-vcard"></i>
+            Usuario de prueba</a>
+        </div>
       </div>
       <!-- User test -->
       <div>

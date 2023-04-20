@@ -1,7 +1,8 @@
 <div class="row">
-  <div class="options-header col-12 col-md-6">
+  <div class="options-header col-12 col-md-12">
     <!-- Add product -->
-    <button class="btn btn-success btn-add" routerLink="add">Nuevo</button>
+    <h3>Productos</h3>
+    <button class="btn btn-success btn-add" routerLink="add">Nuevo producto</button>
     <!-- Search product -->
     <!-- <div class="input-group">
       <input type="text" id="search" class="form-control" placeholder="Producto a buscar" />
@@ -28,7 +29,7 @@
 
   <div class="table-responsive">
     <table class="table table-hover">
-      <thead class="bg-black">
+      <thead>
         <tr>
           <th>Nombre</th>
           <th>Categoría</th>
@@ -48,9 +49,11 @@
         <td>{{ product.stock }}</td>
         <td>{{ product.stock_min }}</td> -->
           <td>
-            <a class="text-warning small mx-1" (click)="goEditProduct(product)"><i class="bi bi-pencil"></i></a>
+            <a title="Editar" class="text-info mx-2 fs-6" (click)="goEditProduct(product)"><i
+                class="bi bi-pencil-fill"></i></a>
             <!-- <a class="text-primary small mx-1"><i class="bi bi-eye"></i></a> -->
-            <a class="text-danger small mx-1" (click)="delete(product)"><i class="bi bi-trash"></i></a>
+            <a title="Eliminar" class="text-danger mx-2 fs-6" (click)="delete(product)"><i
+                class="bi bi-trash-fill"></i></a>
           </td>
         </tr>
       </tbody>

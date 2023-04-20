@@ -6,11 +6,7 @@ import { selectProducts } from 'src/app/store/selectors/product.selectors';
 @Component({
   selector: 'app-sale-list-items',
   templateUrl: './sale-list-items.component.html',
-  styles: [`
-  .card-items {
-    height: calc(100vh - 220px);
-    overflow: auto;}
-  `]
+  styleUrls: ['./sale-list-items.component.css'],
 })
 export class SaleItemListComponent implements OnInit {
   // todo -> cambiar tipo para que no agrege otros campos
