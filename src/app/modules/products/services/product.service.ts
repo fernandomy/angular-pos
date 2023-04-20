@@ -7,6 +7,9 @@ import {
   doc,
   updateDoc,
   docData,
+  query,
+  orderBy,
+  limit,
 } from '@angular/fire/firestore';
 import { deleteDoc } from '@firebase/firestore';
 import { Observable } from 'rxjs';
@@ -24,8 +27,9 @@ export class ProductService {
   }
 
   getProducts(): Observable<ProductModel[]> {
-    const productRef = collection(this.firestore, 'products');
-    return collectionData(productRef, { idField: 'id' }) as Observable<
+    const productRef = collection(this.firestore, 'products',);
+    const q = query(productRef, orderBy("name"));
+    return collectionData(q, { idField: 'id' }) as Observable<
       ProductModel[]
     >;
   }
