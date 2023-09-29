@@ -17,4 +17,9 @@
       {{ field.errors.maxlength.requiredLength }} caracteres.
     </small>
   </div>
+  <div *ngIf="field.errors.passwordValidation">
+    <small>
+      {{ field.errors.passwordValidation.message }}
+    </small>
+  </div>
 </div>

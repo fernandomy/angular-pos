@@ -11,14 +11,15 @@ a {
 }
 
 body {
-  background-color: var(--bg-body);
+  font-size: 14px;
+  background-color: #e2e2e2;
 }
 
 /* Mantener el ancho de celdas */
-table td,
+/* table td,
 th {
   white-space: nowrap;
-}
+} */
 
 .table {
   background-color: #fff;
@@ -26,12 +27,6 @@ th {
 
 .table tr td {
   color: #909294;
-}
-
-/* Card */
-.card {
-  /* background-color: #000; */
-  padding: 1rem;
 }
 
 /* Offcanvas */
@@ -80,4 +75,10 @@ th {
 
 .list-group-item {
   /* background-color: #2c2c2c; */
+}
+
+.card,
+.card-header,
+.card-body,
+.card-footer {
 }

@@ -2,7 +2,9 @@
   <div class="options-header col-12 col-md-12">
     <!-- Add product -->
     <h3>Productos</h3>
-    <button class="btn btn-success btn-add" routerLink="add">Nuevo producto</button>
+    <button class="btn btn-success btn-add" routerLink="add">
+      Nuevo producto
+    </button>
     <!-- Search product -->
     <!-- <div class="input-group">
       <input type="text" id="search" class="form-control" placeholder="Producto a buscar" />
@@ -49,13 +51,22 @@
         <td>{{ product.stock }}</td>
         <td>{{ product.stock_min }}</td> -->
           <td>
-            <a title="Editar" class="text-info mx-2 fs-6" (click)="goEditProduct(product)"><i
-                class="bi bi-pencil-fill"></i></a>
+            <a
+              title="Editar"
+              class="text-info mx-2 fs-5"
+              (click)="goEditProduct(product)"
+              ><i class="bi bi-pencil-fill"></i
+            ></a>
             <!-- <a class="text-primary small mx-1"><i class="bi bi-eye"></i></a> -->
-            <a title="Eliminar" class="text-danger mx-2 fs-6" (click)="delete(product)"><i
-                class="bi bi-trash-fill"></i></a>
+            <a
+              title="Eliminar"
+              class="text-danger mx-2 fs-5"
+              (click)="delete(product)"
+              ><i class="bi bi-trash-fill"></i
+            ></a>
           </td>
         </tr>
       </tbody>
     </table>
   </div>
+</div>

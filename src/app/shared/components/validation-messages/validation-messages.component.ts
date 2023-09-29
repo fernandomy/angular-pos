@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { AbstractControl, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-validation-messages',
@@ -6,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styles: [],
 })
 export class ValidationMessagesComponent {
-  @Input() field: any;
+  @Input() field!: any;
 
   isValidField(): boolean {
     return !!(this.field?.touched && this.field.invalid);

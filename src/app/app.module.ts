@@ -4,9 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
-import LocaleEs from '@angular/common/locales/es'
+import LocaleEs from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
-registerLocaleData(LocaleEs, 'es')
+registerLocaleData(LocaleEs, 'es');
 
 // Firebase
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
@@ -21,8 +21,6 @@ import { EffectsModule } from '@ngrx/effects';
 import { ROOT_REDUCERS } from './store/app.state';
 import { ProductsEffects } from './store/effects/product.effects';
 import { SaleEffects } from './store/effects/sale.effects';
-
-
 
 @NgModule({
   declarations: [AppComponent],
@@ -44,4 +42,4 @@ import { SaleEffects } from './store/effects/sale.effects';
   providers: [{ provide: LOCALE_ID, useValue: 'es' }],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

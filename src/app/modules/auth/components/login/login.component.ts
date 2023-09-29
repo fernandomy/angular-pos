@@ -11,6 +11,7 @@ import { NotificationService } from '../../../../shared/services/notification.se
 })
 export class LoginComponent {
   form: FormGroup;
+  loading: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -27,10 +28,12 @@ export class LoginComponent {
 
   onSubmit() {
     if (this.form.valid) {
+      this.loading = true;
       this.authS
         .login(this.form.value)
         .then((user) => {
           // console.log(user);
+          this.loading = false;
           this.router.navigate(['dashboard']);
         })
         .catch((error) => {

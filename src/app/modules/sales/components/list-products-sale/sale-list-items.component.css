@@ -1,4 +1,15 @@
+.items {
+  height: calc(100vh - 130px);
+}
 .card-items {
-  height: calc(100vh - 280px);
   overflow: auto;
+}
+
+.card-items::-webkit-scrollbar {
+  width: 7px;
+}
+
+.card-items::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #a3a19c;
 }

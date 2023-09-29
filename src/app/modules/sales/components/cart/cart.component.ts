@@ -20,7 +20,11 @@ export class CartComponent {
   total: number = 0;
   items!: SaleItemModel[];
 
-  constructor(private store: Store, private toastr: ToastrService, public activeModal: NgbActiveModal) {
+  constructor(
+    private store: Store,
+    private toastr: ToastrService,
+    public activeModal: NgbActiveModal
+  ) {
     this.itemsCart$ = store.select(selectCartItems);
 
     this.itemsCart$.subscribe((data) => {
@@ -46,5 +50,9 @@ export class CartComponent {
 
   closeCartModal() {
     // this.modalActive.dismiss()
+  }
+
+  OnClickEmptyCart() {
+    this.store.dispatch(emptyCart());
   }
 }

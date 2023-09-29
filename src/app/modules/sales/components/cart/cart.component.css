@@ -1,4 +1,16 @@
+.cart {
+  height: calc(100vh - 130px);
+}
+
+.card-body::-webkit-scrollbar {
+  width: 7px;
+}
+
+.card-body::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #3459e6;
+}
+.card,
 .card-body {
-  height: calc(100vh - 300px);
-  overflow: auto;
+  background-color: #ebebeb;
 }

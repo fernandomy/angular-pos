@@ -1,23 +1,52 @@
 <div class="modal-header d-md-none">
-  <h4>Carrito</h4>
-  <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss()"></button>
+  <h3>Carrito de compras</h3>
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+    (click)="activeModal.dismiss()"
+  ></button>
 </div>
-<div class="card p-0">
-  <!-- <div class="card-header text-center">
-        <h4>Carrito</h4>
-    </div> -->
-  <div class="card-body">
+
+<div class="card cart border-0 shadow-none bg-white">
+  <div class="card-body overflow-auto">
     <ng-container *ngIf="emptyCart > 0">
-      <app-cart-item *ngFor="let item of itemsCart$ | async" [item]="item"></app-cart-item>
+      <app-cart-item
+        *ngFor="let item of itemsCart$ | async"
+        [item]="item"
+      ></app-cart-item>
     </ng-container>
-    <ng-container *ngIf="emptyCart == 0">
-      <p class="text-center fs-5">El carrito esta vacio.</p>
-    </ng-container>
+    <div
+      *ngIf="emptyCart == 0"
+      class="d-flex align-items-center justify-content-center h-100"
+    >
+      <div>
+        <p class="text-muted text-center fs-1">
+          <i class="bi bi-cart2"></i>
+        </p>
+        <p class="text-muted text-center fs-4">El carrito esta vacío.</p>
+      </div>
+    </div>
   </div>
   <div class="card-footer text-center">
-    <div class="mb-2">Total: <span class="fw-bold">{{ total | currency : "S/." }}</span> </div>
-    <button class="btn btn-primary w-50" [disabled]="!(emptyCart>0)" (click)="onSaveSale()">
-      Confirmar venta
-    </button>
+    <div class="mb-2">
+      <span class="fw-bold fs-3">Total: {{ total | currency : "PEN" }}</span>
+    </div>
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-secondary w-100" (click)="OnClickEmptyCart()">
+          Vaciar carrito
+        </button>
+      </div>
+      <div class="col">
+        <button
+          class="btn btn-primary w-100"
+          [disabled]="!(emptyCart > 0)"
+          (click)="onSaveSale()"
+        >
+          Confirmar venta
+        </button>
+      </div>
+    </div>
   </div>
 </div>

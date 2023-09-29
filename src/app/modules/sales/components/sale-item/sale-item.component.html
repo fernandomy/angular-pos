@@ -1,9 +1,21 @@
-<div class="card card-hover mb-3" (click)="addProductCart(item)">
-    <div class="card-body p-0">
-        <img src="{{ item.imageUrl }}" alt="" />
-        <div class="ms-3">
-            <p class="card-title">{{ item.name }}</p>
-            <p class="card-text">{{ item.price | currency : "S/." }}</p>
-        </div>
+<div class="card h-100" (click)="addProductCart(item)">
+  <div class="row">
+    <div class="col-4">
+      <img
+        src="{{ item.imageUrl }}"
+        alt="Imagen del producto"
+        class="image mx-auto"
+      />
     </div>
+    <div class="col-8">
+      <div class="card-body">
+        <p class="text-muted fw-semibold">{{ item.name }}</p>
+      </div>
+      <div class="card-footer py-2 px-3 bg-transparent">
+        <p class="fw-bold text-black m-0">
+          Precio: {{ item.price | currency : "PEN" }}
+        </p>
+      </div>
+    </div>
+  </div>
 </div>

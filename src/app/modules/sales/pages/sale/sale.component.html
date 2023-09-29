@@ -1,17 +1,20 @@
-<h3>Nueva venta</h3>
-<div class="row">
+<!-- <h3>Nueva venta</h3> -->
+<div class="row h-100">
   <!-- List products sale -->
-  <div class="col-12 col-md-6 col-lg-8">
+  <div class="col-12 col-lg-8 py-3">
     <app-sale-list-items />
   </div>
   <!-- Cart -->
-  <div class="col-12 col-md-6 col-lg-4 d-none d-md-block">
-    <app-cart></app-cart>
+  <div class="col-12 col-lg-4 d-none d-md-block py-3">
+    <app-cart />
   </div>
   <!-- Button float cart -->
   <div class="fixed-bottom button-float d-md-none">
-    <span class="total-items-cart">{{total}}</span>
-    <button class="btn btn-primary float-end rounded-circle" (click)="openCart()">
+    <span class="total-items-cart">{{ total }}</span>
+    <button
+      class="btn btn-success float-end rounded-circle"
+      (click)="openCart()"
+    >
       <i class="bi bi-cart"></i>
     </button>
   </div>

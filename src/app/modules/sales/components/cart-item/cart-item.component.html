@@ -1,20 +1,56 @@
-<div class="card">
-  <img src="{{ item.imageUrl }}" alt="" class="image" />
+<div class="card p-2 mb-2">
+  <span>{{ item.name }}</span>
+  <hr class="m-0 my-1" />
+  <div class="d-flex align-items-center justify-content-between">
+    <!-- <div class="image">
+      <img src="{{ item.imageUrl }}" alt="" class="img-fluid" />
+    </div> -->
 
-  <div class="detail">
-    <span class="title">{{ item.name }}</span>
-    <div class="content">
-      <span>{{ item.price | currency : "S/." }}</span>
-      <span class="text-decoration-underline">
-        <a title="Decrementar" [ngClass]="{ 'disabled-link': item.quantity < 2 }" (click)="decreaseAmount(item)"><i
-            class="bi bi-dash-circle"></i></a>
-        <span class="mx-2">{{ item.quantity }}</span>
-        <a title="Incrementar" (click)="increaseAmount(item)"><i class="bi bi-plus-circle"></i></a>
-      </span>
-      <span class="fw-bold">{{
-        item.price * item.quantity | currency : "S/."
+    <!-- <div class="d-flex justify-content-between mb-2">
+        <span class="small text-white"
+          >Precio: {{ item.price | currency : "S/." }}</span
+        >
+        <span class="small text-white">{{
+          item.price * item.quantity | currency : "S/."
         }}</span>
+      </div> -->
+    <!-- Botones de cantidad -->
+    <div class="d-flex gap-1">
+      <button
+        class="btn btn-sm btn-secondary"
+        title="Decrementar"
+        [disabled]="item.quantity < 2"
+        (click)="decreaseAmount(item)"
+      >
+        <span class="small fw-bolder"><i class="bi bi-dash"></i></span>
+      </button>
+
+      <button
+        class="btn btn-sm btn-light"
+        title="Incrementar"
+        (click)="increaseAmount(item)"
+      >
+        <span class="small fw-bolder"><i class="bi bi-plus"></i></span>
+      </button>
+    </div>
+    <div class="d-flex gap-2">
+      <span>{{ item.price | currency : "PEN" }}</span>
+      <span class="fw-semibold">x</span>
+      <span>{{ item.quantity }}</span>
+      <span class="fw-semibold">=</span>
+      <span class="fw-semibold">{{
+        item.price * item.quantity | currency : "PEN"
+      }}</span>
+    </div>
+    <!-- Boton eliminar del carrito -->
+    <div>
+      <button
+        title="Eliminar del carrito"
+        class="btn btn-sm btn-danger"
+        (click)="removeItem(item)"
+      >
+        <span class="small"><i class="bi bi-trash"></i></span>
+      </button>
     </div>
   </div>
-  <a title="Eliminar del carrito" class="text-danger" (click)="removeItem(item)"><i class="bi bi-x-circle"></i></a>
 </div>
