@@ -16,17 +16,22 @@ body {
 }
 
 /* Mantener el ancho de celdas */
-/* table td,
+table td,
 th {
   white-space: nowrap;
-} */
-
-.table {
-  background-color: #fff;
 }
 
-.table tr td {
-  color: #909294;
+.table-responsive {
+  overflow-y: scroll;
+}
+
+.table-responsive::-webkit-scrollbar {
+  height: 7px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+  background-color: #a3a19c;
+  border-radius: 5px;
 }
 
 /* Offcanvas */
@@ -75,10 +80,4 @@ th {
 
 .list-group-item {
   /* background-color: #2c2c2c; */
-}
-
-.card,
-.card-header,
-.card-body,
-.card-footer {
 }

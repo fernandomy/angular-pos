@@ -1,6 +1,6 @@
-<div class="card p-2 mb-2">
+<div class="card p-3 mb-2">
   <span>{{ item.name }}</span>
-  <hr class="m-0 my-1" />
+  <hr />
   <div class="d-flex align-items-center justify-content-between">
     <!-- <div class="image">
       <img src="{{ item.imageUrl }}" alt="" class="img-fluid" />
@@ -46,10 +46,10 @@
     <div>
       <button
         title="Eliminar del carrito"
-        class="btn btn-sm btn-danger"
+        class="btn btn-sm btn-light"
         (click)="removeItem(item)"
       >
-        <span class="small"><i class="bi bi-trash"></i></span>
+        <span class="text-danger"><i class="bi bi-trash"></i></span>
       </button>
     </div>
   </div>

@@ -1,18 +1,21 @@
 .wrapper {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 65px 1fr;
+
+  grid-template-rows: 82px 1fr;
   grid-template-areas:
     "menu"
-    "content";
-  height: 100vh;
+    "main";
+
+  width: 100%;
 }
 
-.navbar {
+.menu {
   grid-area: menu;
+  background-color: blue;
 }
 
-.content {
-  grid-area: content;
+.main {
+  grid-area: main;
   background-color: #e2e2e2;
+  overflow-x: scroll;
 }

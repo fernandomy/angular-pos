@@ -1,5 +1,5 @@
 .cart {
-  height: calc(100vh - 130px);
+  height: calc(100vh - 140px);
 }
 
 .card-body::-webkit-scrollbar {
@@ -8,7 +8,7 @@
 
 .card-body::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background-color: #3459e6;
+  background-color: #a3a19c;
 }
 .card,
 .card-body {
