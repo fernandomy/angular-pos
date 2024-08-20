@@ -29,14 +29,14 @@ export class AddProductComponent {
     });
   }
   initiForm() {
-    const randomNum = Math.floor(Math.random() * (50 - 1 + 1)) + 1;
-    const imageDir = `https://robohash.org/${randomNum}`;
+    // const randomNum = Math.floor(Math.random() * (50 - 1 + 1)) + 1;
+    // const imageDir = `https://robohash.org/${randomNum}`;
 
     return this.fb.group({
       name: [, [Validators.required]],
       category: ['Sin categoria', [Validators.required]],
       price: [, [Validators.required]],
-      imageUrl: [imageDir, [Validators.required]],
+      imageUrl: [, [Validators.required]],
     });
   }
 
