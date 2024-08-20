@@ -1,0 +1,8 @@
+.image{
+    height: 30px;
+    object-fit: cover;
+}
+
+.image-container{
+    width: 40px;
+}

@@ -2,7 +2,8 @@
   height: calc(100vh - 140px);
 }
 .card-items {
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .card-items::-webkit-scrollbar {

@@ -9,7 +9,7 @@ import {
   getDocs,
   query,
 } from '@angular/fire/firestore';
-import { map, Observable, of, tap } from 'rxjs';
+import {  Observable, of } from 'rxjs';
 import { SaleItemModel } from '../../../core/models/sale-item.model';
 import { SaleModel } from '../../../core/models/sale.model';
 

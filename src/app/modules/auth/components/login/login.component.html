@@ -52,13 +52,13 @@
           {{ loading ? "Cargando" : "Ingresar" }}
         </button>
       </div>
-      <div class="link text-center">
+      <div class="text-center">
         <a (click)="toResetPassword()">¿Olvido su contraseña?</a>
         <div>
           <a
-            class="small text-decoration-none"
+            class="small page-link text-info"
             placement="top"
-            ngbTooltip="Click para cargar credenciales de usuario test@easypos.com"
+            ngbTooltip="Credenciales de prueba"
             (click)="credentialsTest()"
           >
             <i class="bi bi-person-vcard"></i>

@@ -1,33 +1,33 @@
 <div class="card items bg-transparent border-0 shadow-none">
-  <div class="px-2">
-    <div class="row">
-      <div class="col-12 col-md-6 mb-2">
-        <input
-          class="form-control"
-          type="text"
-          [(ngModel)]="filterName"
-          placeholder="Nombre de producto"
-        />
-      </div>
-      <div class="col-12 col-md-6 d-flex mb-2">
-        <input
-          class="form-control"
-          type="number"
-          min="1"
-          [(ngModel)]="filterPriceMin"
-          placeholder="Precio min"
-        />
-        <input
-          class="form-control ms-3"
-          type="number"
-          min="1"
-          [(ngModel)]="filterPriceMax"
-          placeholder="Precio max"
-        />
-      </div>
+  <div class="row g-1 mb-3">
+    <div class="col-12 col-xl-6">
+      <input
+        class="form-control"
+        type="text"
+        [(ngModel)]="filterName"
+        placeholder="Nombre de producto"
+      />
+    </div>
+    <div class="col-6 col-xl-3">
+      <input
+        class="form-control"
+        type="number"
+        min="1"
+        [(ngModel)]="filterPriceMin"
+        placeholder="Precio min"
+      />
+    </div>
+    <div class="col-6 col-xl-3">
+      <input
+        class="form-control"
+        type="number"
+        min="1"
+        [(ngModel)]="filterPriceMax"
+        placeholder="Precio max"
+      />
     </div>
   </div>
-  <div class="card-items px-3">
+  <div class="card-items pe-3 pe-lg-0">
     <div class="row g-2">
       <ng-container *ngIf="items$ | async as items">
         <ng-container
@@ -37,7 +37,7 @@
               | filterItemByPrice : filterPriceMin : filterPriceMax
           "
         >
-          <app-sale-item class="col-lg-6" [item]="item"></app-sale-item>
+          <app-sale-item class="col-12 col-lg-6" [item]="item"></app-sale-item>
         </ng-container>
       </ng-container>
     </div>

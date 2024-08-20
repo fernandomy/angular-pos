@@ -38,9 +38,12 @@ export class LoginComponent {
         })
         .catch((error) => {
           // console.log(error);
+          this.loading = false;
+          this.form.patchValue({email:'', password: '' });
           this.notificationS.firebaseError(error.code);
         });
     }
+   
   }
 
   isValidField(name: string): boolean {

@@ -14,6 +14,7 @@ export class ModalService {
       backdrop: 'static',
       keyboard: false,
       centered: true,
+      size: 'lg',
     });
   }
 

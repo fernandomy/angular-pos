@@ -11,11 +11,10 @@
 
 .menu {
   grid-area: menu;
-  background-color: blue;
 }
 
 .main {
   grid-area: main;
   background-color: #e2e2e2;
-  overflow-x: scroll;
+  overflow-x: hidden;
 }

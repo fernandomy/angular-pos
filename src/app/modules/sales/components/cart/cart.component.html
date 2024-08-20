@@ -30,18 +30,20 @@
   </div>
   <div class="card-footer text-center">
     <div class="mb-2">
-      <span class="fw-bold fs-3">Total: {{ total | currency : "PEN" }}</span>
+      <span class="fw-bold fs-4">Total: {{ total | currency : "PEN" }}</span>
     </div>
     <div class="row">
       <div class="col">
-        <button class="btn btn-secondary w-100" (click)="OnClickEmptyCart()">
+        <button class="btn btn-secondary w-100" (click)="OnClickEmptyCart()"
+        [ngClass]="{ 'enabled': emptyCart>0, 'disabled': !(emptyCart > 0) }">
           Vaciar carrito
         </button>
       </div>
       <div class="col">
         <button
-          class="btn btn-primary w-100"
+          class="btn btn-success w-100"
           [disabled]="!(emptyCart > 0)"
+          [ngClass]="{ 'enabled': emptyCart>0, 'disabled': !(emptyCart > 0) }"
           (click)="onSaveSale()"
         >
           Confirmar venta

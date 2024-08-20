@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { ToastrService } from 'ngx-toastr';
 import { SaleItemModel } from 'src/app/core/models/sale-item.model';
 import {
   decreaseCartitemQuantity,
@@ -15,10 +16,12 @@ import {
 export class CartItemComponent {
   @Input() item!: SaleItemModel;
 
-  constructor(private store: Store) {}
+  constructor(private store: Store,private toastr: ToastrService) {}
 
   removeItem(item: SaleItemModel) {
     this.store.dispatch(removeCartItem({ item }));
+
+    this.toastr.error(item.name, 'Eliminado del carrito');
   }
 
   increaseAmount(item: SaleItemModel) {
